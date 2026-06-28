@@ -1,0 +1,1742 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karlissa Cole | AI Product Manager Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        /* Updated Color Scheme based on user request */
+        --teal-header: #e0f2f1; /* Light teal header */
+        --teal-primary: #00796b; /* Deeper teal for accents/borders */
+        --blue-heading: #0d1b2a; /* Dark blue for headings */
+        --orange-accent: #ff7f50; /* Warm coral/orange for buttons and links */
+        --orange-hover: #ff6347; /* Darker orange for hover states */
+        --bg-neutral: #f8f9fa; /* Off-white background */
+        --bg-card: #ffffff; /* White for cards */
+        --text-main: #333333; /* Dark gray for readability */
+        --text-muted: #5c6b73; /* Muted gray for secondary text */
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Outfit", sans-serif;
+        background: var(--bg-neutral);
+        color: var(--text-main);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        padding: 15px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        backdrop-filter: blur(20px);
+        background: rgba(224, 242, 241, 0.95); /* Light teal header */
+        border-bottom: 1px solid rgba(0, 121, 107, 0.1);
+      }
+      .nav-logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: var(--blue-heading);
+        letter-spacing: -0.5px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        list-style: none;
+        align-items: center;
+      }
+      .nav-links a {
+        color: var(--blue-heading);
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--orange-accent);
+      }
+
+      /* Buttons */
+      .btn-primary {
+        background: var(--orange-accent);
+        color: white;
+        padding: 12px 28px;
+        border-radius: 100px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: all 0.3s;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(255, 127, 80, 0.3);
+        display: inline-block;
+      }
+      .btn-primary:hover {
+        background: var(--orange-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 127, 80, 0.4);
+        color: white;
+      }
+      .btn-outline {
+        border: 2px solid var(--orange-accent);
+        color: var(--orange-accent);
+        padding: 12px 28px;
+        border-radius: 100px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: all 0.3s;
+        background: transparent;
+        display: inline-block;
+      }
+      .btn-outline:hover {
+        background: rgba(255, 127, 80, 0.1);
+        transform: translateY(-2px);
+        color: var(--orange-hover);
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        padding: 140px 60px 80px;
+        position: relative;
+        background: var(--bg-neutral);
+      }
+      .hero-text {
+        position: relative;
+        z-index: 2;
+        padding-right: 40px;
+      }
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--teal-header);
+        border: 1px solid var(--teal-primary);
+        color: var(--teal-primary);
+        padding: 8px 16px;
+        border-radius: 100px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.8rem, 5vw, 4.8rem);
+        font-weight: 900;
+        line-height: 1.1;
+        color: var(--blue-heading);
+        margin-bottom: 16px;
+      }
+      h1 span {
+        color: var(--teal-primary);
+        font-style: italic;
+      }
+      .tagline {
+        font-size: 1.25rem;
+        color: var(--teal-primary);
+        font-weight: 600;
+        margin-bottom: 24px;
+        letter-spacing: 0.5px;
+      }
+      .hero-sub {
+        font-size: 1.1rem;
+        color: var(--text-main);
+        line-height: 1.7;
+        max-width: 650px;
+        margin-bottom: 40px;
+        font-weight: 400;
+      }
+      .hero-ctas {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .hero-visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .photo-frame {
+        position: relative;
+        width: 360px;
+        height: 460px;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        border: 8px solid white;
+      }
+      .photo-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background: var(--teal-header);
+      }
+
+      section {
+        padding: 100px 60px;
+        position: relative;
+      }
+      .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--teal-primary);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .section-label::after {
+        content: "";
+        height: 2px;
+        background: var(--teal-primary);
+        width: 50px;
+        display: inline-block;
+      }
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.2rem, 4vw, 3rem);
+        font-weight: 900;
+        color: var(--blue-heading);
+        line-height: 1.2;
+        margin-bottom: 24px;
+      }
+
+      /* About Section */
+      #about {
+        background: var(--bg-card);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 60px;
+        align-items: start;
+      }
+      .about-text p {
+        color: var(--text-main);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin-bottom: 22px;
+        font-weight: 400;
+      }
+
+      .skills-container {
+        background: var(--bg-neutral);
+        padding: 32px;
+        border-radius: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .skills-container h3 {
+        font-size: 1.2rem;
+        color: var(--blue-heading);
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 30px;
+      }
+      .skill-tag {
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--teal-primary);
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      /* Portfolio Section */
+      #portfolio {
+        background: var(--bg-neutral);
+      }
+      .apps-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .app-card {
+        background: var(--bg-card);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s;
+      }
+      .app-card:hover {
+        transform: translateY(-4px);
+      }
+
+      .app-layout {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        align-items: stretch;
+        transition: 0.45s ease;
+      }
+      .app-img-container {
+        width: 100%;
+        height: 100%;
+        min-height: 280px;
+        align-self: stretch;
+        position: relative;
+        background: var(--teal-header);
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .app-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.9;
+      }
+      .fiximgapp{
+        object-fit: contain;
+      }
+
+      .app-content {
+        padding: 40px;
+        transition: 0.45s ease;
+      }
+      .app-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .app-name {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--blue-heading);
+      }
+      .app-badge-container {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .app-type {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 4px 12px;
+        border-radius: 100px;
+        background: var(--teal-header);
+        color: var(--teal-primary);
+      }
+
+      .app-desc {
+        color: var(--text-main);
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+      .app-metrics {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+      }
+      .metric {
+        background: var(--bg-neutral);
+        border-radius: 12px;
+        padding: 10px 18px;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+      }
+      .metric-val {
+        font-weight: 700;
+        color: var(--orange-accent);
+        display: block;
+        font-size: 1.1rem;
+      }
+      .metric-key {
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      .prd-toggle {
+        background: var(--bg-neutral);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--blue-heading);
+        padding: 14px 24px;
+        border-radius: 12px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.2s;
+        font-family: "Outfit", sans-serif;
+      }
+      .prd-toggle:hover {
+        background: var(--teal-header);
+        color: var(--teal-primary);
+      }
+      .prd-arrow {
+        transition: transform 0.3s;
+        font-size: 1.1rem;
+        color: var(--orange-accent);
+      }
+      .prd-toggle.open .prd-arrow {
+        transform: rotate(180deg);
+      }
+
+      .prd-panel {
+        display: none;
+        padding: 30px 10px 10px;
+        border-top: 1px dashed rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+      }
+      .prd-panel.open {
+        display: block;
+      }
+      .app-card.expanded .app-layout {
+        display: block;
+      }
+
+      .app-card.expanded .app-img-container {
+        width: 100%;
+        height: 420px;
+        min-height: 420px;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
+      .app-card.expanded .slides {
+        height: 100%;
+        aspect-ratio: auto;
+      }
+
+      .app-card.expanded .slide {
+        object-fit: contain;
+        background: #e0f2f1;
+      }
+
+      .app-card.expanded .app-content {
+        padding: 45px;
+      }
+
+      .app-img-container {
+        transition: 0.45s ease;
+      }
+
+      .prd-meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 16px;
+        margin-bottom: 24px;
+        padding: 20px;
+        background: var(--bg-neutral);
+        border-radius: 12px;
+      }
+      .prd-meta-item {
+        font-size: 0.85rem;
+        color: var(--text-main);
+      }
+      .prd-meta-item strong {
+        color: var(--teal-primary);
+        display: block;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 4px;
+      }
+
+      .prd-section {
+        margin-bottom: 24px;
+      }
+      .prd-section-title {
+        font-size: 0.95rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--blue-heading);
+        margin-bottom: 12px;
+        padding-bottom: 6px;
+        border-bottom: 2px solid var(--teal-header);
+        display: flex;
+        align-items: center;
+      }
+      .prd-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        background: var(--teal-primary);
+        color: white;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin-right: 10px;
+      }
+
+      .prd-section p {
+        color: var(--text-main);
+        font-size: 0.95rem;
+        line-height: 1.65;
+        margin-bottom: 10px;
+      }
+      .prd-section ul {
+        list-style: none;
+        margin-top: 8px;
+      }
+      .prd-section ul li {
+        color: var(--text-main);
+        font-size: 0.95rem;
+        padding: 6px 0 6px 20px;
+        position: relative;
+      }
+      .prd-section ul li::before {
+        content: "•";
+        position: absolute;
+        left: 5px;
+        color: var(--orange-accent);
+        font-size: 1.2rem;
+        top: 2px;
+      }
+
+      .moscow {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 4px;
+        margin-right: 8px;
+        text-transform: uppercase;
+      }
+      .m-must {
+        background: rgba(255, 127, 80, 0.15);
+        color: var(--orange-accent);
+      }
+      .m-should {
+        background: rgba(0, 121, 107, 0.15);
+        color: var(--teal-primary);
+      }
+
+      .userstory {
+        background: var(--teal-header);
+        border-left: 3px solid var(--teal-primary);
+        padding: 12px 16px;
+        border-radius: 0 8px 8px 0;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        color: var(--text-main);
+        font-style: italic;
+      }
+
+      /* Resources */
+      #resources {
+        background: var(--bg-card);
+        text-align: center;
+      }
+      .resources-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+      .resource-card {
+        background: var(--bg-neutral);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        padding: 40px 30px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        transition: all 0.3s;
+      }
+      .resource-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+        border-color: var(--teal-primary);
+      }
+      .resource-icon {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+      }
+      .resource-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
+        color: var(--blue-heading);
+        margin-bottom: 12px;
+      }
+      .resource-card p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin-bottom: 24px;
+      }
+
+      /* Contact Section */
+      #contact {
+        background: var(--bg-neutral);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .contact-info-block {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 20px;
+        background: white;
+        border-radius: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: rgba(0, 0, 0, 0.02) 0 4px 12px;
+        text-decoration: none;
+        transition:
+          transform 0.2s,
+          border-color 0.2s;
+      }
+      .contact-item:hover {
+        transform: translateX(5px);
+        border-color: var(--orange-accent);
+      }
+      .contact-icon {
+        width: 44px;
+        height: 44px;
+        background: var(--teal-header);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: var(--teal-primary);
+        flex-shrink: 0;
+      }
+      .contact-label {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
+      }
+      .contact-val {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--blue-heading);
+      }
+
+      .contact-cta {
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 24px;
+        padding: 48px;
+        text-align: center;
+        box-shadow: var(--shadow);
+      }
+      .contact-cta h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: var(--blue-heading);
+        margin-bottom: 12px;
+      }
+      .contact-cta p {
+        color: var(--text-main);
+        margin-bottom: 32px;
+        font-weight: 400;
+      }
+
+      footer {
+        background: var(--blue-heading);
+        padding: 32px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        color: #a0aec0;
+      }
+      footer strong {
+        color: white;
+      }
+      footer a {
+        color: var(--orange-accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      @media (max-width: 1024px) {
+        .hero {
+          grid-template-columns: 1fr;
+          padding: 120px 24px 60px;
+          text-align: center;
+          /* gap: 50px; */
+        }
+        .hero-text {
+          padding-right: 0;
+        }
+        .hero-sub {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .hero-ctas {
+          justify-content: center;
+        }
+        .hero-visual {
+          margin-top: 40px;
+        }
+        .app-layout {
+          grid-template-columns: 1fr;
+        }
+        .app-img-container {
+          height: 240px;
+          border-right: none;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .about-grid,
+        .contact-wrapper {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        nav {
+          padding: 15px 24px;
+        }
+        .nav-links {
+          display: none;
+        }
+        section {
+          padding: 70px 24px;
+        }
+      }
+
+      /* @media (min-width: 1025px) {
+        .app-img-container {
+          position: sticky;
+          top: 110px;
+          height: fit-content;
+          align-self: start;
+        }
+      } */
+
+      /* Slider */
+      .slider {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 16px;
+      }
+      .slides {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/10;
+      }
+      .slide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+      .slide.active {
+        opacity: 1;
+      }
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.45);
+        color: #fff;
+        cursor: pointer;
+        z-index: 5;
+      }
+      .prev {
+        left: 10px;
+      }
+      .next {
+        right: 10px;
+      }
+      .dots {
+        position: absolute;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 5;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #fff;
+        opacity: 0.45;
+        cursor: pointer;
+      }
+      .dot.active {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+      @media (max-width: 768px) {
+        .arrow {
+          width: 32px;
+          height: 32px;
+        }
+
+        .slides {
+          aspect-ratio: 4/3;
+        }
+
+        .skills-grid {
+          display: grid;
+
+          grid-template-columns: 1fr 1fr;
+
+          gap: 8px;
+        }
+
+        .skill-tag {
+          font-size: 0.72rem;
+          padding: 8px;
+          text-align: center;
+        }
+
+        .skills-container {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-logo">KC</div>
+      <ul class="nav-links">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#resources">Resources & Links</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a
+        href="#contact"
+        class="btn-primary"
+        style="padding: 10px 24px; font-size: 0.85rem"
+        >Let's Connect</a
+      >
+    </nav>
+
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <div class="hero-tag">AI Product Management</div>
+        <h1>Karlissa <span>Cole</span></h1>
+        <div class="tagline">
+          Product Manager | AI Enthusiast | Data-Driven Leader
+        </div>
+        <!-- Updated Title to remove 15 years -->
+        <p class="hero-sub">
+          Senior AI Product Manager with years of experience turning complex
+          technology into products people love from digital signage AI to B2B
+          platforms and beyond.
+        </p>
+        <div class="hero-ctas">
+          <a href="#portfolio" class="btn-primary">Explore Portfolio</a>
+          <!-- Added quick link to Resume -->
+          <a
+            href="https://docs.google.com/document/d/1o6UvncIFLHSl5w3xhOXPTcByAA_i4nDJ/edit?usp=sharing&ouid=113911761287730256033&rtpof=true&sd=true"
+            target="_blank"
+            class="btn-outline"
+            >View Resume</a
+          >
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="photo-frame">
+          <!-- Verbatim specified image name -->
+          <img
+            src="Head-shot.png"
+            alt="Karlissa Cole Professional Photo"
+            onerror="
+              this.src =
+                'https://placehold.co/360x460/E0F2F1/0D1B2A?text=Karlissa+Cole'
+            "
+            class="photo-img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-label">About Me</div>
+      <h2>Where AI Meets Business Strategy</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm an AI-forward Product Manager who bridges the gap between
+            cutting-edge technology and real business outcomes. With experience
+            spanning healthcare, hospitality, legal, and finance — I build
+            products that actually move the needle. I love cooking and jogging.
+            Let’s be honest: nobody wants to use an AI product that feels like a
+            fragile science experiment. 🧪
+          </p>
+          <p>
+            In my world as an AI Product Manager, the magic doesn't happen when
+            you simply slap an LLM onto a legacy dashboard. It happens when you
+            stop building for the tech and start building for the human on the
+            other side of the screen.
+          </p>
+          <p>
+            I build AI products the way I run a kitchen: I figure out what
+            people are actually hungry for, taste everything before it leaves
+            the pass, and never serve a dish just because the recipe was
+            trending on TikTok.
+          </p>
+          <p>
+            My sweet spot? Translating bleeding-edge capabilities like
+            Generative AI, machine learning, and complex automated
+            workflows—into intuitive, high-value user experiences. To pull this
+            off, I rely on a dual approach: architecting robust technical
+            foundations (so the product scales without hallucinating under load)
+            and leveraging deep behavioral insights (because psychology is what
+            actually drives adoption).
+          </p>
+          <p>
+            When you balance the technical "how it works" with the psychological
+            "why they need it," you stop merely launching features. You
+            accelerate real business growth, optimize market positioning, and
+            build AI tools that your users genuinely trust.
+          </p>
+          <p>
+            I'm also a lifelong learner — certified across AI, ML, data
+            analysis, and product strategy through Harvard, Vanderbilt, Duke,
+            Google, NVIDIA, and more.
+          </p>
+        </div>
+        <div class="skills-container">
+          <h3>Core Expertise</h3>
+          <div class="skills-grid">
+            <div class="skill-tag">Generative AI & LLMs</div>
+            <div class="skill-tag">AI Product Strategy</div>
+            <div class="skill-tag">Technical Architecture</div>
+            <div class="skill-tag">Behavioral Insights</div>
+            <div class="skill-tag">B2B SaaS Platforms</div>
+            <div class="skill-tag">Prompt Engineering</div>
+            <div class="skill-tag">Workflow Automation</div>
+            <div class="skill-tag">Data Modeling Concepts</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="section-label">Featured Work</div>
+      <h2>Production AI Solutions</h2>
+      <p
+        class="section-intro"
+        style="margin-bottom: 40px; color: var(--text-muted)"
+      >
+        Explore a collection of scalable AI products designed with technical
+        integrity and human psychology in mind. Click any toggle to inspect the
+        raw Product Requirement Document (PRD).
+      </p>
+
+      <div class="apps-grid">
+        <!-- PROJECT 1: AdAgent -->
+        <div class="app-card">
+          <div class="app-layout">
+            <div class="app-img-container slider" data-slider>
+              <!-- Placeholder reflecting th          e new color scheme -->
+              <button class="arrow prev">&#10094;</button>
+              <div class="slides">
+                <img src="adAgent1.png" class="slide active" />
+                <img src="adAgent2.png" class="slide" />
+                <img src="adAgent3.png" class="slide" />
+                <img src="adAgent4.png" class="slide" />
+                <img src="adAgent5.png" class="slide" />
+              </div>
+              <button class="arrow next">&#10095;</button>
+              <div class="dots"></div>
+              <!-- </div> -->
+            </div>
+            <div class="app-content">
+              <div class="app-header">
+                <div class="app-name">AdAgent</div>
+                <div class="app-badge-container">
+                  <span class="app-type">B2B Marketing SaaS</span>
+                </div>
+              </div>
+              <p class="app-desc">
+                An autonomous, multi-agent AI advertising orchestration platform
+                that automates copy generation, budget pacing, and behavioral
+                targeting variations natively across key ad channels.
+              </p>
+              <div class="app-metrics">
+                <div class="metric">
+                  <span class="metric-val">+42%</span
+                  ><span class="metric-key">ROAS Increase</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-val">10x</span
+                  ><span class="metric-key">Asset Variation Speed</span>
+                </div>
+              </div>
+              <button class="prd-toggle" onclick="togglePRD(this)">
+                <span class="toggle-text">View Detailed PRD</span>
+                <span class="prd-arrow">▼</span>
+              </button>
+
+              <div class="prd-panel">
+                <div class="prd-meta">
+                  <div class="prd-meta-item">
+                    <strong>Document Owner</strong>Karlissa Cole
+                  </div>
+                  <div class="prd-meta-item">
+                    <strong>Target Release</strong>Q3 2026
+                  </div>
+                  <div class="prd-meta-item">
+                    <strong>Tech Stack</strong>GPT-4o, LangChain, Python
+                  </div>
+                </div>
+
+                <div class="prd-section">
+                  <div class="prd-section-title">
+                    <span class="prd-num">1</span>Executive Summary & Objectives
+                  </div>
+                  <p>
+                    AdAgent serves mid-market marketing agencies overwhelmed by
+                    manual asset variations and channel fragmentation. The
+                    primary objective is to replace static templates with
+                    dynamic, self-optimizing cross-channel advertising workflows
+                    driven by deep psychological profiling of consumer cohorts.
+                  </p>
+                </div>
+
+                <div class="prd-section">
+                  <div class="prd-section-title">
+                    <span class="prd-num">2</span>User Personas & Stories
+                  </div>
+                  <div class="userstory">
+                    "As a Growth Marketing Director, I want an autonomous system
+                    to generate and continuously fine-tune ad variations based
+                    on live programmatic feedback so that our ROAS remains
+                    maximized without manual monitoring."
+                  </div>
+                </div>
+
+                <div class="prd-section">
+                  <div class="prd-section-title">
+                    <span class="prd-num">3</span>Functional Requirements
+                    (MoSCoW)
+                  </div>
+                  <ul>
+                    <li>
+                      <span class="moscow m-must">Must</span> Multi-agent
+                      architecture mapping separate nodes for copywriting, image
+                      layout auditing, and bidding adjustment.
+                    </li>
+                    <li>
+                      <span class="moscow m-must">Must</span> Native webhook
+                      integration with Meta Ads Manager and Google Ads APIs.
+                    </li>
+                    <li>
+                      <span class="moscow m-should">Should</span> Behavioral
+                      psychological framing options (e.g., scarcity vs. social
+                      proof hooks).
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: Contexta -->
+        <div class="app-card">
+          <div class="app-layout">
+            <div class="app-img-container slider" data-slider>
+              <button class="arrow prev">&#10094;</button>
+              <div class="slides">
+                <img src="Contexta1.png" class="slide active" />
+                <img src="Contexta2.png" class="slide" />
+                <img src="Contexta3.png" class="slide" />
+              </div>
+              <button class="arrow next">&#10095;</button>
+              <div class="dots"></div>
+            </div>
+            <div class="app-content">
+              <div class="app-header">
+                <div class="app-name">Contexta</div>
+                <div class="app-badge-container">
+                  <span class="app-type">Enterprise LegalTech</span>
+                </div>
+              </div>
+              <p class="app-desc">
+                A deep contextual intelligence engine specializing in ingestion,
+                synthesis, and risk assessment of unstructured corporate legal
+                records and compliance transcripts via advanced RAG
+                architecture.
+              </p>
+              <div class="app-metrics">
+                <div class="metric">
+                  <span class="metric-val">-85%</span
+                  ><span class="metric-key">Review Overhead</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-val">99.4%</span
+                  ><span class="metric-key">Accuracy Rate</span>
+                </div>
+              </div>
+              <button class="prd-toggle" onclick="togglePRD(this)">
+                <span class="toggle-text">View Detailed PRD</span>
+                <span class="prd-arrow">▼</span>
+              </button>
+
+              <div class="prd-panel">
+                <div class="prd-meta">
+                  <div class="prd-meta-item">
+                    <strong>Document Owner</strong>Karlissa Cole
+                  </div>
+                  <div class="prd-meta-item">
+                    <strong>Target Release</strong>V2 Update
+                  </div>
+                  <div class="prd-meta-item">
+                    <strong>Tech Stack</strong>LlamaIndex, Claude 3.5, Qdrant
+                  </div>
+                </div>
+
+                <div class="prd-section">
+                  <div class="prd-section-title">
+                    <span class="prd-num">1</span>Executive Summary & Objectives
+                  </div>
+                  <p>
+                    Contexta ingests multi-hundred-page compliance files and
+                    instantly surfaces non-obvious operational risk vectors. It
+                    eliminates typical model hallucinations by binding search
+                    verification indices directly to corporate knowledge
+                    containers.
+                  </p>
+                </div>
+
+                <div class="prd-section">
+                  <div class="prd-section-title">
+                    <span class="prd-num">2</span>User Personas & Stories
+                  </div>
+                  <div class="userstory">
+                    "As an Enterprise Compliance Officer, I need long-context
+                    cross-document cross-referencing capabilities so I can
+                    verify regulatory changes against 5 years of historical
+                    vendor agreements within minutes."
+                  </div>
+                </div>
+
+                <div class="prd-section">
+                  <div class="prd-section-title">
+                    <span class="prd-num">3</span>Functional Requirements
+                  </div>
+                  <ul>
+                    <li>
+                      <span class="moscow m-must">Must</span> Context window
+                      preservation matching large document cluster demands (up
+                      to 200k tokens cleanly).
+                    </li>
+                    <li>
+                      <span class="moscow m-must">Must</span> Explicit citation
+                      tracing down to paragraph and line number identifiers.
+                    </li>
+                    <li>
+                      <span class="moscow m-should">Should</span> Automatic NDA
+                      clause anomaly identification against standard playbook
+                      configurations.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: OmniShieldData -->
+        <div class="app-card">
+          <div class="app-layout">
+            <div class="app-img-container slider" data-slider>
+              <button class="arrow prev">&#10094;</button>
+              <div class="slides">
+                <img src="OmniShielddata1.png" class="slide active" />
+                <img src="OmniShielddata2.png" class="slide" />
+                <img src="OmniShielddata3.png" class="slide" />
+                <img src="OmniShielddata4.png" class="slide" />
+              </div>
+              <button class="arrow next">&#10095;</button>
+              <div class="dots"></div>
+            </div>
+            <div class="app-content">
+              <div class="app-header">
+                <div class="app-name">OmniShieldData</div>
+                <div class="app-badge-container">
+                  <span class="app-type">Data Privacy & Cyber</span>
+                </div>
+              </div>
+              <p class="app-desc">
+                An inline AI data-guard platform that automatically intercepts
+                enterprise text data pipelines, scrubbing PII, PHI, and
+                sensitive Intellectual Property before safe routing to external
+                generative networks.
+              </p>
+              <div class="app-metrics">
+                <div class="metric">
+                  <span class="metric-val">&lt; 15ms</span
+                  ><span class="metric-key">Processing Latency</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-val">100%</span
+                  ><span class="metric-key">PII Leak Prevention</span>
+                </div>
+              </div>
+              <button class="prd-toggle" onclick="togglePRD(this)">
+                <span class="toggle-text">View Detailed PRD</span>
+                <span class="prd-arrow">▼</span>
+              </button>
+
+              <div class="prd-panel">
+                <div class="prd-meta">
+                  <div class="prd-meta-item">
+                    <strong>Document Owner</strong>Karlissa Cole
+                  </div>
+                  <div class="prd-meta-item">
+                    <strong>Target Release</strong>Beta v1.2
+                  </div>
+                  <div class="prd-meta-item">
+                    <strong>Tech Stack</strong>Custom BERT NER, Redis, Go
+                  </div>
+                </div>
+
+                <div class="prd-section">
+                  <div class="prd-section-title">
+                    <span class="prd-num">1</span>Executive Summary & Objectives
+                  </div>
+                  <p>
+                    OmniShieldData addresses corporate anxiety surrounding
+                    third-party LLM usage. Operating as a hyper-fast API layer,
+                    it dynamically proxies requests, strips identifiers via
+                    advanced Named Entity Recognition (NER), and re-injects
+                    synthetic equivalents seamlessly.
+                  </p>
+                </div>
+
+                <div class="prd-section">
+                  <div class="prd-section-title">
+                    <span class="prd-num">2</span>User Personas & Stories
+                  </div>
+                  <div class="userstory">
+                    "As a Chief Information Security Officer, I want to allow
+                    our engineers to utilize public foundational models while
+                    completely preventing proprietary source code or client
+                    records from escaping our boundary."
+                  </div>
+                </div>
+
+                <div class="prd-section">
+                  <div class="prd-section-title">
+                    <span class="prd-num">3</span>Functional Requirements
+                  </div>
+                  <ul>
+                    <li>
+                      <span class="moscow m-must">Must</span> Streaming token
+                      interception ensuring system stays below strict latency
+                      overhead thresholds.
+                    </li>
+                    <li>
+                      <span class="moscow m-must">Must</span> Reversible
+                      tokenization maps allowing inbound responses to decrypt
+                      correctly.
+                    </li>
+                    <li>
+                      <span class="moscow m-should">Should</span> Visual
+                      compliance dashboards tracking volume and categorizations
+                      of scrubbed data.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: AI Wayfinding & Signage Platform -->
+        <div class="app-card">
+          <div class="app-layout">
+            <div class="app-img-container">
+              <img
+                src="Wayfinding_Hardware.jpg"
+                onerror="
+                  this.src =
+                    'https://placehold.co/600x400/E0F2F1/0D1B2A?text=AI+Wayfinding'
+                "
+                alt="AI Wayfinding & Signage Hardware Integration"
+                class="app-img fiximgapp"
+              />
+            </div>
+            <div class="app-content">
+              <div class="app-header">
+                <div class="app-name">AI Wayfinding & Signage Platform</div>
+                <div class="app-badge-container">
+                  <span class="app-type">IoT & Computer Vision</span>
+                </div>
+              </div>
+              <p class="app-desc">
+                An intelligent physical network ecosystem altering commercial
+                display boards, structural maps, and pathing directions based on
+                ambient crowd foot-traffic patterns and hardware triggers.
+              </p>
+              <div class="app-metrics">
+                <div class="metric">
+                  <span class="metric-val">34%</span
+                  ><span class="metric-key">Foot Traffic Optimization</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-val">2.1 min</span
+                  ><span class="metric-key">Avg Wait Time Cut</span>
+                </div>
+              </div>
+              <button class="prd-toggle" onclick="togglePRD(this)">
+                <span class="toggle-text">View Detailed PRD</span>
+                <span class="prd-arrow">▼</span>
+              </button>
+
+              <div class="prd-panel">
+                <div class="prd-meta">
+                  <div class="prd-meta-item">
+                    <strong>Document Owner</strong>Karlissa Cole
+                  </div>
+                  <div class="prd-meta-item">
+                    <strong>Target Release</strong>Enterprise Rollout
+                  </div>
+                  <div class="prd-meta-item">
+                    <strong>Tech Stack</strong>YOLOv8, WebSockets, Intel NUC
+                    Edge
+                  </div>
+                </div>
+
+                <div class="prd-section">
+                  <div class="prd-section-title">
+                    <span class="prd-num">1</span>Executive Summary & Objectives
+                  </div>
+                  <p>
+                    This platform modernizes transit hubs, healthcare campuses,
+                    and large venues by turning legacy screens into
+                    context-aware agents. By evaluating ambient localized
+                    variables, screens shift dynamically to prevent facility
+                    bottlenecking.
+                  </p>
+                </div>
+
+                <div class="prd-section">
+                  <div class="prd-section-title">
+                    <span class="prd-num">2</span>User Personas & Stories
+                  </div>
+                  <div class="userstory">
+                    "As an Airport Operations Manager, I want our physical
+                    digital directories to instantly reroute passenger flow
+                    recommendations when security checkpoint queue length
+                    changes."
+                  </div>
+                </div>
+
+                <div class="prd-section">
+                  <div class="prd-section-title">
+                    <span class="prd-num">3</span>Functional Requirements
+                  </div>
+                  <ul>
+                    <li>
+                      <span class="moscow m-must">Must</span> On-device
+                      localized processing keeping computer vision logic offline
+                      for passenger privacy.
+                    </li>
+                    <li>
+                      <span class="moscow m-must">Must</span> Under 500ms screen
+                      asset rendering changes based on structural alert trigger
+                      payloads.
+                    </li>
+                    <li>
+                      <span class="moscow m-should">Should</span> Language
+                      layout adjustment driven by aggregate flight arrival
+                      origin matching.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 5: Enterprise Banking Product Suite -->
+        <div class="app-card">
+          <div class="app-layout">
+            <div class="app-img-container">
+              <img
+                src="Banking_Dashboard.jpg"
+                onerror="
+                  this.src =
+                    'https://placehold.co/600x400/E0F2F1/0D1B2A?text=Enterprise+Banking'
+                "
+                alt="Enterprise Banking Product Suite"
+                class="app-img fiximgapp"
+              />
+            </div>
+            <div class="app-content">
+              <div class="app-header">
+                <div class="app-name">Enterprise Banking Product Suite</div>
+                <div class="app-badge-container">
+                  <span class="app-type">FinTech & Fraud Automation</span>
+                </div>
+              </div>
+              <p class="app-desc">
+                A unified transactional intelligence dashboard for institutional
+                banking operations. It utilizes predictive machine learning to
+                automate tier-1 fraud investigations and streamline
+                international wire clearances.
+              </p>
+              <div class="app-metrics">
+                <div class="metric">
+                  <span class="metric-val">60%</span
+                  ><span class="metric-key">Reduction in Manual Review</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-val">$12M</span
+                  ><span class="metric-key">Fraud Prevented YTD</span>
+                </div>
+              </div>
+              <button class="prd-toggle" onclick="togglePRD(this)">
+                <span class="toggle-text">View Detailed PRD</span>
+                <span class="prd-arrow">▼</span>
+              </button>
+
+              <div class="prd-panel">
+                <div class="prd-meta">
+                  <div class="prd-meta-item">
+                    <strong>Document Owner</strong>Karlissa Cole
+                  </div>
+                  <div class="prd-meta-item">
+                    <strong>Target Release</strong>v3.0 Secure
+                  </div>
+                  <div class="prd-meta-item">
+                    <strong>Tech Stack</strong>Python, TensorFlow, React
+                  </div>
+                </div>
+
+                <div class="prd-section">
+                  <div class="prd-section-title">
+                    <span class="prd-num">1</span>Executive Summary & Objectives
+                  </div>
+                  <p>
+                    The Enterprise Banking Product Suite modernizes outdated
+                    risk mitigation workflows. By evaluating over 150
+                    transactional data points in real-time, the system
+                    automatically clears low-risk wires while quarantining
+                    highly suspicious actions for human compliance officers.
+                  </p>
+                </div>
+
+                <div class="prd-section">
+                  <div class="prd-section-title">
+                    <span class="prd-num">2</span>User Personas & Stories
+                  </div>
+                  <div class="userstory">
+                    "As a Senior Risk Analyst, I want the system to surface a
+                    probability confidence score on flagged transactions,
+                    complete with the contributing data vectors, so I don't have
+                    to spend 45 minutes manually tracing the audit log."
+                  </div>
+                </div>
+
+                <div class="prd-section">
+                  <div class="prd-section-title">
+                    <span class="prd-num">3</span>Functional Requirements
+                  </div>
+                  <ul>
+                    <li>
+                      <span class="moscow m-must">Must</span> Real-time
+                      transactional scoring via integration with the bank's core
+                      ledger APIs.
+                    </li>
+                    <li>
+                      <span class="moscow m-must">Must</span> Audit trail
+                      generation logging every automated decision for regulatory
+                      compliance.
+                    </li>
+                    <li>
+                      <span class="moscow m-should">Should</span> Natural
+                      language querying for historical fraud trend analysis.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="section-label">External Links & Writing</div>
+      <h2>Publications & Resources</h2>
+      <div class="resources-grid">
+        <div class="resource-card">
+          <div class="resource-icon">📖</div>
+          <h3>From Content to Context</h3>
+          <p>
+            My newly released eBook detailing strategies for navigating the
+            shift toward context-aware generative systems.
+          </p>
+          <a
+            href="https://drive.google.com/file/d/1RYJiwh9r-dYTNFXef4S-rhF0TFiU9ADL/view?usp=sharing"
+            target="_blank"
+            class="btn-outline"
+            >Read eBook</a
+          >
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">✍️</div>
+          <h3>Product & Strategy Blog</h3>
+          <p>
+            Deep dives into AI product architecture, behavioral insights, and
+            market trends.
+          </p>
+          <a
+            href="https://karlissacole.blogspot.com/"
+            target="_blank"
+            class="btn-outline"
+            >Visit Blog</a
+          >
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">📄</div>
+          <h3>Professional Resume</h3>
+          <p>
+            A comprehensive view of my professional history, education, and
+            technical certifications.
+          </p>
+          <a
+            href="https://docs.google.com/document/d/1o6UvncIFLHSl5w3xhOXPTcByAA_i4nDJ/edit?usp=sharing&ouid=113911761287730256033&rtpof=true&sd=true"
+            target="_blank"
+            class="btn-outline"
+            >View Google Doc</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-wrapper">
+        <div class="contact-info-block">
+          <div class="section-label">Get in Touch</div>
+          <h2>Let's build something impactful.</h2>
+          <p style="margin-bottom: 24px; color: var(--text-main)">
+            Whether you're looking to scale an AI product team, need strategic
+            advisement on an upcoming launch, or just want to talk tech and user
+            psychology, my inbox is open.
+          </p>
+
+          <a href="mailto:colekarlissa2@gmail.com" class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-label">Email Me</div>
+              <div class="contact-val">colekarlissa2@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="tel:4703138422" class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">Phone</div>
+              <div class="contact-val">470-313-8422 | 678-685-3975</div>
+            </div>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/karlissacole/"
+            target="_blank"
+            class="contact-item"
+          >
+            <div class="contact-icon">💼</div>
+            <div>
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-val">linkedin.com/in/karlissacole</div>
+            </div>
+          </a>
+
+          <a
+            href="https://github.com/KarlissaC"
+            target="_blank"
+            class="contact-item"
+          >
+            <div class="contact-icon">💻</div>
+            <div>
+              <div class="contact-label">GitHub</div>
+              <div class="contact-val">github.com/KarlissaC</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="contact-cta">
+          <h3>Ready to talk strategy?</h3>
+          <p>
+            Connect with me via email or phone to discuss how my data-driven
+            approach aligns with your product goals.
+          </p>
+          <a
+            href="mailto:colekarlissa2@gmail.com"
+            class="btn-primary"
+            style="display: inline-block"
+            >Send an Email</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        &copy; 2026 <strong>Karlissa Cole</strong>. All rights reserved.
+      </div>
+      <div>Designed with 🤍 for AI Innovation</div>
+    </footer>
+
+    <script>
+      function togglePRD(button) {
+        const panel = button.nextElementSibling;
+        const card = button.closest(".app-card");
+
+        const opened = panel.classList.contains("open");
+
+        document.querySelectorAll(".prd-panel.open").forEach((p) => {
+          p.classList.remove("open");
+
+          p.previousElementSibling.classList.remove("open");
+
+          p.closest(".app-card").classList.remove("expanded");
+        });
+
+        if (!opened) {
+          panel.classList.add("open");
+
+          button.classList.add("open");
+
+          card.classList.add("expanded");
+
+          card.scrollIntoView({
+            behavior: "smooth",
+
+            block: "start",
+          });
+        }
+      }
+    </script>
+
+    <script>
+      document.querySelectorAll("[data-slider]").forEach((slider) => {
+        const slides = [...slider.querySelectorAll(".slide")];
+        const dotsWrap = slider.querySelector(".dots");
+        let idx = 0,
+          t;
+        slides.forEach((s, i) => {
+          const d = document.createElement("span");
+          d.className = "dot" + (i == 0 ? " active" : "");
+          d.onclick = () => {
+            idx = i;
+            u();
+            r();
+          };
+          dotsWrap.appendChild(d);
+        });
+        const dots = [...dotsWrap.children];
+        function u() {
+          slides.forEach((s, i) => s.classList.toggle("active", i === idx));
+          dots.forEach((d, i) => d.classList.toggle("active", i === idx));
+        }
+        function n() {
+          idx = (idx + 1) % slides.length;
+          u();
+        }
+        function p() {
+          idx = (idx - 1 + slides.length) % slides.length;
+          u();
+        }
+        function r() {
+          clearInterval(t);
+          t = setInterval(n, 2000);
+        }
+        slider.querySelector(".next").onclick = () => {
+          n();
+          r();
+        };
+        slider.querySelector(".prev").onclick = () => {
+          p();
+          r();
+        };
+        let sx = 0;
+        slider.addEventListener(
+          "touchstart",
+          (e) => (sx = e.touches[0].clientX),
+        );
+        slider.addEventListener("touchend", (e) => {
+          let dx = e.changedTouches[0].clientX - sx;
+          if (Math.abs(dx) > 40) {
+            dx < 0 ? n() : p();
+            r();
+          }
+        });
+        r();
+      });
+    </script>
+  </body>
+</html>
